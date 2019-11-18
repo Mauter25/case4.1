@@ -1,0 +1,5 @@
+number_of_offers = 'Количество предложений:'
+words = 'Слов:'
+syllables = 'Слогов:'
+Average_sentence_length_in_words = 'Средняя длина предложения в словах:'
+Average_syllable_length = 'Средняя длина слова в слогах:'
