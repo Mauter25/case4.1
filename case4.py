@@ -17,7 +17,7 @@ if language == '2':
     TXB = TextBlob(text)
     sentiment = TXB.sentiment.polarity
     subjectivity = TXB.sentiment.subjectivity
-    print(subjectivity)
+    print((1-subjectivity)*100, '%')
     if sentiment < 0:
         print('Негативный текст')
     if 0 < sentiment < 50:
