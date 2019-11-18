@@ -1,10 +1,11 @@
 import rulocal as ru
-language = input('Выберете язык: 1.Русский 2. English ')
+from textblob import TextBlob
+language = input(ru.Choose_a_language_Russian_English)
 if language == '2':
-    x = str(input()).lower()
-    b = list(x)
-    sentences = x.count('.')
-    sum_of_words = (x.count(' ') + 1)
+    text = str(input()).lower()
+    b = list(text)
+    sentences = text.count('.')
+    sum_of_words = (text.count(' ') + 1)
     slogs = len([1 for x in b if x in ['a', 'e', 'i', 'o', 'u', 'y']])
     print(ru.number_of_offers, sentences)
     print(ru.words, sum_of_words)
@@ -13,11 +14,21 @@ if language == '2':
     print(ru.Average_sentence_length_in_words, average_of_words)
     average_of_slogs = slogs / sum_of_words
     print(ru.Average_syllable_length, average_of_slogs)
+    TXB = TextBlob(text)
+    sentiment = TXB.sentiment.polarity
+    subjectivity = TXB.sentiment.subjectivity
+    print(subjectivity)
+    if sentiment < 0:
+        print('Негативный текст')
+    if 0 < sentiment < 50:
+        print('Нейтральный текст')
+    if sentiment > 100:
+        print('Позитивный текст')
 elif language == '1':
-    y = str(input()).lower()
-    b = list(y)
-    sentences = (y.count('.'))
-    sum_of_words: int = (y.count(' ') + 1)
+    text1 = str(input()).lower()
+    b = list(text1)
+    sentences = (text1.count('.'))
+    sum_of_words: int = (text1.count(' ') + 1)
     slogs = len([1 for x in b if x in ['а', 'у', 'е', 'о', 'я', 'и', 'ы', 'ю', 'э', 'ё']])
     print(ru.number_of_offers, sentences)
     print(ru.words, sum_of_words)
