@@ -1,3 +1,8 @@
+#Case-study №4
+#Developers: Mauter A. (40%)
+#            Kuzmin E. (40%)
+#            Petrov V. (20%)
+
 import rulocal as ru
 from textblob import TextBlob
 language = input(ru.Choose_a_language_Russian_English)
